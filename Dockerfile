@@ -12,7 +12,7 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
-COPY --from=build /target/sendgridemail-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /target/sendgridemail-0.0.1-SNAPSHOT.jar sendgridemail.jar
 
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "sendgridemail.jar"]
